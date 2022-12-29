@@ -1,8 +1,16 @@
 package chap_07.camera;
 
+import com.sun.corba.se.spi.ior.IdentifiableContainerBase;
+
 public class FactoryCam extends Camera { // Camera의 자식 클래스
     public FactoryCam() {
-        this.name = "공장 카메라";
+        //this.name = "공장 카메라";
+        super("공장 카메라"); // 부모 클래스의 생성자에 바로 접근
+    }
+
+    public void recordVideo() {
+        super.recordVideo();
+        detectFire();
     }
 
     public void detectFire() {
